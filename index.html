@@ -7,5 +7,38 @@
     <title>Document</title>
     <script src="index.js" defer type="module"></script>
   </head>
-  <body>bla</body>
+  <body>
+    <main>
+      <section class="player player1">
+        <h1>player 1</h1>
+        <p class="player-score">0</p>
+        <section class="current-score">
+          current score: <span class="current-score-span">0</span>
+        </section>
+      </section>
+
+      <section class="current-player player player2">
+        <h1>player 2</h1>
+        <p class="player-score">0</p>
+        <section class="current-score">
+          current score: <span class="current-score-span">0</span>
+        </section>
+      </section>
+
+      <section class="info-card">
+        <div class="score-div">
+          the max score is: <span id="max-score">100</span>
+        </div>
+        <button class="new-game">new game</button>
+
+        <section class="dices">
+          <div class="dice"><img class="img-dice" alt=""></div>
+          <div class="dice"><img class="img-dice" alt=""></div>
+        </section>
+
+        <button class="roll-dice">roll dice</button>
+        <button class="hold">Hold</button>
+      </section>
+    </main>
+  </body>
 </html>
