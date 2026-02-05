@@ -10,7 +10,6 @@ export function getRandomNumber() {
   const min = 1;
   const max = 6;
   const num = Math.floor(Math.random() * (max - min + 1) + min);
-  console.log(num);
   return num;
 }
 
@@ -23,17 +22,14 @@ export function rollDice() {
     "./images/dice-5.png",
     "./images/dice-6.png",
   ];
-  console.log("currentScore: ", currentScore);
   const firstNum = getRandomNumber();
   const secondNum = getRandomNumber();
-  console.log("in");
 
   const dices = document.querySelectorAll(".img-dice");
   dices[0].src = pictirs[firstNum - 1];
   dices[1].src = pictirs[secondNum - 1];
 
   if (firstNum === secondNum) {
-    console.log("blaaa 1", currentScore);
     resetGame(0, currentPlayer);
   } else {
     currentScore += firstNum + secondNum;
@@ -55,9 +51,7 @@ export function resetGame(fCurrentScore) {
   currentScore = 0;
   document.querySelectorAll(".current-score-span")[currentPlayer].textContent =
     0;
-
   currentPlayer = currentPlayer ? 0 : 1;
-  console.log({ currentPlayer, currentScore });
   chengeBackround();
 }
 
@@ -82,8 +76,6 @@ export function resetAllGame() {
 }
 
 export function win() {
-  console.log("in win");
-
   document.querySelector("main").innerHTML += `<section class="won-section">
           <p>player won</p>
           <p>${players[currentPlayer].name}</p>
@@ -91,7 +83,6 @@ export function win() {
 
   setTimeout(() => {
     const wonSection = document.querySelector(".won-section");
-    console.log("wonSection");
     wonSection.remove();
   }, 4000);
 }
